@@ -1,10 +1,8 @@
-const fullName = ("What's your full name?");
-const userAge = parseInt(("How old are you?"));
-const userKilometers = parseInt(
-  ("How many kilometers you want to travel?")
-);
-const price = userKilometers * 0.21;
+const fullName = document.getElementById("inputName");
+const userKilometers = document.getElementById("inputKilometers");
+const userAge = document.getElementById("selectAge");
 const date = new Date();
+
 
 // Date
 const currentDay = date.getDate();
@@ -14,16 +12,35 @@ const currentDate = `${currentDay}/${currentMonth}/${currentYear}`;
 document.getElementById("currentDate").innerHTML = `${currentDate}`;
 
 //Informations
-document.getElementById("fullName").innerHTML = `${fullName}`;
-document.getElementById("userAge").innerHTML = `${userAge}`;
-document.getElementById("userKilometers").innerHTML = `${userKilometers}`;
+//document.getElementById("fullName").innerHTML = `${fullName}`;
+//document.getElementById("userAge").innerHTML = `${userAge}`;
+//document.getElementById("userKilometers").innerHTML = `${userKilometers}`;
 
-let coupon = 0;
 
-if (userAge < 18) {
-  const coupon = (price * 20) / 100;
-  document.getElementById("price").innerHTML = (price - coupon).toFixed(2) + "€";
-} else if (userAge >= 65) {
-  const coupon = (price * 40) / 100;
+
+
+
+//SUBMIT BUTTON 
+
+const subBtn = document.querySelector("[name='submit']");
+
+subBtn.addEventListener("click", function () {
+  // Codice che verrà eseguito SOLO quando   l'utente clicca sul pulsante 
+  //Name and Surname
+  const username = fullName.value;
+  document.getElementById("fullName").innerHTML = `${username}`;
+  // Age travel price
+  const priceKm = userKilometers.value;
+  document.getElementById("userKilometers").innerHTML = `${priceKm}`;
+  const price = priceKm * 0.21;
+  let coupon = 0;
+  const ageClass = userAge.value;
+  if (ageClass == 1) { //Children
+    coupon = (price * 20) / 100;
+  } else if (ageClass == 3) { //Elderly
+    coupon = (price * 40) / 100;
+  }
   document.getElementById("price").innerHTML = (price - coupon).toFixed(2) + "€";
 }
+)
+
