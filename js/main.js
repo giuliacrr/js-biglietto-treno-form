@@ -43,8 +43,12 @@ subBtn.addEventListener("click", function () {
     coupon = (price * 40) / 100;
   }
   document.getElementById("price").innerHTML = (price - coupon).toFixed(2) + "€";
-  document.getElementById("wagon").innerHTML = + "5";
-  document.getElementById("code").innerHTML = + "92911";
+
+  //RNG Carriage and Train number
+  const numTrain = Math.floor(Math.random() * 90000) + 10000;
+  const numCarriage = Math.floor(Math.random() * 9) + 1;
+  document.getElementById("wagon").innerHTML = numCarriage;
+  document.getElementById("code").innerHTML = numTrain;
 }
 )
 
