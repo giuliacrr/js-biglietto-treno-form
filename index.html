@@ -27,62 +27,73 @@
         <div class="bg-primary p-1"></div>
     </header>
     <main>
-        <!-- NAME, AGE, KM-->
-        <div class="container p-5">
-            <div class="card">
-                <h3 class="card-header text-center">Generate your ticket!</h3>
-                <div class="card-body">
-                    <div>
-                        <div class="d-flex justify-content-center">
-                            <!--Name & surname-->
-                            <div class="text-center mx-5 max-width-inputs">
-                                <label for="inputName" class="form-label">Name and Surname</label>
-                                <input type="text" class="form-control" id="inputName">
+        <form>
+            <!-- NAME, AGE, KM-->
+            <div class="container p-5">
+                <div class="card">
+                    <h3 class="card-header text-center bg-primary text-white">Generate your ticket!</h3>
+                    <div class="card-body">
+                        <form>
+                            <div>
+                                <div class="d-flex justify-content-center">
+                                    <!--Name & surname-->
+                                    <div class="text-center mx-5 max-width-inputs">
+                                        <label for="inputName" class="form-label">Name and Surname</label>
+                                        <input type="text" class="form-control" id="inputName">
+                                    </div>
+                                    <!--Kilometers-->
+                                    <div class="text-center mx-5 max-width-inputs">
+                                        <label for="inputKilometers" class="form-label">Km to travel</label>
+                                        <input type="text" class="form-control" id="inputKilometers">
+                                    </div>
+                                    <!--Age-->
+                                    <div class="text-center mx-5 max-width-inputs">
+                                        <label for="selectAge" class="form-label"> Select age</label>
+                                        <select class="form-select" id="selectAge" aria-label="Default select example">
+                                            <option selected value="1">Children(&lt;18)</option>
+                                            <option value="2">Adult</option>
+                                            <option value="3">Elderly (&gt;=65)</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <!--Kilometers-->
-                            <div class="text-center mx-5 max-width-inputs">
-                                <label for="inputKilometers" class="form-label">Km to travel</label>
-                                <input type="text" class="form-control" id="inputKilometers">
+                            <!-- Generate and Reset Buttons-->
+                            <div class="d-flex justify-content-center mt-3">
+                                <button type="button" name="submit" class="btn btn-primary m-2"> Submit </button>
+                                <button type="reset" name="reset" class="btn btn-outline-primary m-2">Reset</button>
                             </div>
-                            <!--Age-->
-                            <div class="text-center mx-5 max-width-inputs">
-                                <label for="selectAge" class="form-label"> Select age</label>
-                                <select class="form-select" id="selectAge" aria-label="Default select example">
-                                    <option selected value="1">Children(&lt;18)</option>
-                                    <option value="2">Adult</option>
-                                    <option value="3">Elderly (&gt;=65)</option>
-                                </select>
+                        </form>
+                    </div>
+                </div>
+                <!--TICKET-->
+                <div class="ticket-container d-none pt-4 m-auto">
+                    <div class="card">
+                        <h3 class="card-header text-white bg-primary">Boolean Ticket</h3>
+                        <div class="card-body">
+                            <h4 class="card-title">Informations</h4>
+                            <div class="fw-bold d-flex">
+                                <div class="m-1">Date: <span class="fw-bold text-primary" id="currentDate"></span></div>
                             </div>
+                            <div class="m-2">
+                                <div class="fw-bold mt-2"><i class="fa-solid fa-user"></i> Name: <span
+                                        class="fw-bold text-primary" id="fullName"></span></div>
+                                <div class="fw-bold mt-2"><i class="fa-solid fa-road"></i> Distance: <span
+                                        class="fw-bold text-primary" id="userKilometers"></span>km
+                                </div>
+                                <div class="fw-bold mt-2"><i class="fa-solid fa-trailer"></i> Carriage:
+                                    <span class="fw-bold text-primary" id="wagon"></span>
+                                </div>
+                                <div class="fw-bold mt-2 mb-2"><i class="fa-solid fa-train"></i> CP Code:
+                                    <span class="fw-bold text-primary" id="code"></span>
+                                </div>
+                            </div>
+                            <h5 class="m-1">Price: <span class="fw-bold text-primary" id="price"></span>
+                            </h5>
                         </div>
                     </div>
-                    <!-- Generate and Reset Buttons-->
-                    <div class="d-flex justify-content-center mt-3">
-                        <button type="button" name="submit" class="btn btn-primary m-2"> Submit </button>
-                        <button type="button" class="btn btn-outline-primary m-2">Reset</button>
-                    </div>
-
                 </div>
             </div>
-        </div>
-        <!--TICKET-->
-        <div class="container p-1">
-            <div class="card">
-                <h3 class="card-header">Boolean Ticket</h3>
-                <div class="card-body">
-                    <h4 class="card-title">Informations</h4>
-                    <div class="fw-bold d-flex">
-                        <div class="m-1">Date: <span class="fw-medium text-primary" id="currentDate"></span></div>
-                    </div>
-                    <ul>
-                        <li>Name: <span class="fw-bolder text-primary" id="fullName"></span></li>
-                        <li>Distance: <span class="fw-bolder text-primary" id="userKilometers"></span></li>
-                        <li>Wagon: <span class="fw-bolder text-primary"></span></li>
-                        <li>CP Code: <span class="fw-bolder text-primary"></span></li>
-                    </ul>
-                    <h5 class="m-1">Price: <span class="fw-medium text-primary" id="price"></span></h5>
-                </div>
-            </div>
-        </div>
+        </form>
     </main>
     <!--Javascript-->
     <script src="js/main.js"></script>

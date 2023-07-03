@@ -1,3 +1,4 @@
+const ticket = document.querySelector(".ticket-container")
 const fullName = document.getElementById("inputName");
 const userKilometers = document.getElementById("inputKilometers");
 const userAge = document.getElementById("selectAge");
@@ -26,6 +27,7 @@ const subBtn = document.querySelector("[name='submit']");
 
 subBtn.addEventListener("click", function () {
   // Codice che verrà eseguito SOLO quando   l'utente clicca sul pulsante 
+  ticket.classList.replace("d-none", "d-block")
   //Name and Surname
   const username = fullName.value;
   document.getElementById("fullName").innerHTML = `${username}`;
@@ -41,6 +43,15 @@ subBtn.addEventListener("click", function () {
     coupon = (price * 40) / 100;
   }
   document.getElementById("price").innerHTML = (price - coupon).toFixed(2) + "€";
+  document.getElementById("wagon").innerHTML = + "5";
+  document.getElementById("code").innerHTML = + "92911";
 }
 )
+
+//RESET BUTTON
+const resetBtn = document.querySelector("[name=reset]")
+
+resetBtn.addEventListener("click", function () {
+  ticket.classList.replace("d-block", "d-none")
+})
 

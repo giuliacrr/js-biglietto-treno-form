@@ -8,3 +8,15 @@
     max-width:200px;
     width:100%;
 }
+
+.list-deco-none {
+    list-style: none;
+}
+
+.ticket-container {
+    max-width:300px;
+}
+
+
+
+
